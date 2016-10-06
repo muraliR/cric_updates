@@ -1,32 +1,16 @@
 var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "June","July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 App.controller('home', function (page) {
-
-    /*var loadingGifImg = page.querySelector(".loader");
-    
-    var resultPlaceholder = page.querySelector('.results-placeholder')*/
-
     var resultSection = page.querySelector('.result-section');
-
     $.ajax({
         url : 'https://newsapi.org/v1/articles?source=espn-cric-info&sortBy=latest&apiKey=050583199ea94e0fbf34aa9f3ecd2e39',
         type : 'GET',
-        /*data : { search_query : query },
-        beforeSend: function(){
-            $(loadingGifImg).removeClass("hidden");
-            $(resultSection).addClass("hidden");
-        },*/
         success : function(data){
             response_data = JSON.parse(data);
             if(response_data["status"] == "ok"){
                 loadResults(page,response_data["articles"]);
             }
             $(resultSection).removeClass("hidden");
-            /*if(response_data["success"]){
-                
-            } else {
-                alert(data["message"]);
-            }*/
         }
     });
 });
@@ -49,23 +33,9 @@ function loadResults(page,articles){
             $article.find('.article-url').attr('href',articleObj.url);
 
             var publishedAtObj = new Date(articleObj.publishedAt);
-
             var h =  publishedAtObj.getHours(), m = publishedAtObj.getMinutes();
             var published_time = (h > 12) ? (h-12 + ':' + m +' PM') : (h + ':' + m +' AM');
-
-
-
             $article.find('.article-published-at').text(published_time);
-
-            
-            
-            /*
-            
-            $article.find('.article-address').text(articleObj.location.address);
-            $article.find('.menu-redirection-href').attr("data-app-target",articleObj.menu_url);
-            $article.find('.article-locality').text(articleObj.location.locality + ', ' + articleObj.location.city);
-            $article.find('.directions').attr("data-app-target", "geo:" + articleObj.location.latitude + "," + articleObj.location.longitude + "?q=" + articleObj.location.latitude + "," + articleObj.location.longitude + "(" + articleObj.name + " " + articleObj.location.locality + ")").attr("target", "_blank");*/
-            
             $articles_results.append($article);
         });    
     } else {
