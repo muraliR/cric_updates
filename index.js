@@ -36,6 +36,6 @@ app.listen(process.env.PORT || 5004, function () {
 	console.log("Listening on port 5004...");
 });
 
-#!/bin/sh
+//#!/bin/sh
 /*var="`cat config.json`"
 curl -X POST -d "$var" http://localhost:5004/config-parse --header "Content-Type:application/json"*/
