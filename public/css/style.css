@@ -21,7 +21,7 @@ img {
 }
 
 .result-content {
-  width: 100%;
+  width: 95%;
   float: left;
   padding: 15px;
   height: auto;
@@ -39,11 +39,18 @@ img {
   white-space: initial;
 }
 
-.article-description {
+/*.article-description {
   text-overflow : ellipsis;
   white-space   : nowrap;
   width         : 93%;
   overflow      : hidden; 
+}*/
+
+.article-description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  /*max-height: 80px;*/
+  white-space: pre-wrap;
 }
 
 .article-url {

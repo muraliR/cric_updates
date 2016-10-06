@@ -29,7 +29,8 @@ function loadResults(page,articles){
             var $article = $template.clone(true);
             $article.find('.img-thumb').attr("src",articleObj.urlToImage).show();
             $article.find('.article-title').text(articleObj.title);
-            $article.find('.article-description').text(articleObj.description);
+            $article.find('.article-description').text(articleObj.description + ' ...');
+
             $article.find('.article-url').attr('href',articleObj.url);
 
             var publishedAtObj = new Date(articleObj.publishedAt);
