@@ -41,4 +41,4 @@ app.listen(process.env.PORT || 5004, function () {
 curl -X POST -d "$var" http://localhost:5004/config-parse --header "Content-Type:application/json"*/
 //
 
-///
+///configdata = "`dokku run cric-news cat package.json`"
