@@ -32,7 +32,7 @@ app.engine('handlebars', expressHandlebars({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
-app.listen(process.env.PORT || 5004, function () {
+app.listen(process.env.PORT || 5002, function () {
 	console.log("Listening on port 5004...");
 });
 

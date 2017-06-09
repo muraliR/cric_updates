@@ -4,7 +4,7 @@
   "description": "Up to date Cricket Happenings",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node cric_news.js"
   },
   "engines": {
     "node": "5.3.0"
