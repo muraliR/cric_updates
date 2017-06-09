@@ -33,7 +33,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 app.listen(process.env.PORT || 5002, function () {
-	console.log("Listening on port 5004...");
+	console.log("Listening on port 5002...");
 });
 
 //#!/bin/sh
